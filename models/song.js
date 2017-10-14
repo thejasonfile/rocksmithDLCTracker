@@ -9,7 +9,7 @@ const songSchema = mongoose.Schema({
     type: String
   },
   song_release_date: {
-    type: Date
+    type: Number
   },
   tuning: {
     type: String
