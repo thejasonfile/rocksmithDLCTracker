@@ -35,4 +35,18 @@ router.post('/', (req, res, next) => {
   });
 });
 
+router.get('/:id', (req, res, next) => {
+  Song.getSongById(req.params.id, (err, song) => {
+    if(err) throw err;
+    res.render('songs/song', {title: 'One Song', song});
+  });
+});
+
+router.get('/:id/edit', (req, res, next) => {
+  Song.getSongById(req.params.id, (err, song) => {
+    if(err) throw err;
+    res.render('songs/edit_song', {title: 'Edit Song', song});
+  });
+});
+
 module.exports = router;

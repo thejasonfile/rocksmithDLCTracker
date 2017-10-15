@@ -3,13 +3,15 @@
   <tr>
     <th>Song</th>
     <th>Artist</th>
+    <th></th>
   </tr>
     {{#each songs}}
     <tr>
-      <td><a href="song/{{this._id}}">{{this.title}}</a></td>
+      <td><a href="songs/{{this._id}}">{{this.title}}</a></td>
       <td>{{this.artist}}</td>
+      <td><a href="songs/{{this._id}}/edit"><button>Edit</button></a></td>
     </tr>
     {{/each}}
 </table>
 <br>
-<a href="/songs/new">Add New Song</a>
+<a href="/songs/new"><button>Add New Song</button></a>
