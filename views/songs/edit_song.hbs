@@ -1,23 +1,24 @@
 <h4>{{title}}</h4>
+{{song.tuning}}
 <form class="" action="/songs/{{song._id}}" method="post">
   <label for="title">Title</label>
-  <input type="text" name="title" id="title" value={{song.title}}>
+  <input type="text" name="title" id="title" value="{{song.title}}">
   <label for="artist">Artist</label>
-  <input type="text" name="artist" id="artist" value={{song.artist}}>
+  <input type="text" name="artist" id="artist" value="{{song.artist}}">
   <label for="song_release_year">Release Year</label>
-  <input type="number" name="song_release_year" id="song_release_year" value={{song.song_release_year}}>
+  <input type="number" name="song_release_year" id="song_release_year" value="{{song.song_release_year}}">
   <label for="tuning">Tuning</label>
-  <input type="text" name="tuning" id="tuning" value={{song.tuning}}>
+  <input type="text" name="tuning" id="tuning" value="{{song.tuning}}">
   <label for="pack_name">Pack Name</label>
-  <input type="text" name="pack_name" id="pack_name" value={{song.pack_name}}>
+  <input type="text" name="pack_name" id="pack_name" value="{{song.pack_name}}">
   <label for="dlc_release_date">DLC Release Date</label>
-  <input type="date" name="dlc_release_date" id="dlc_release_date" value={{song.dlc_release_date}}>
+  <input type="date" name="dlc_release_date" id="dlc_release_date" value="{{song.dlc_release_date}}">
   <label for="rr_guitar_link">Riff Repeater Guitar Video</label>
-  <input type="text" name="rr_guitar_link" id="rr_guitar_link" value={{song.rr_guitar_link}}>
+  <input type="text" name="rr_guitar_link" id="rr_guitar_link" value="{{song.rr_guitar_link}}">
   <label for="rr_bass_link">Riff Repeater Bass Video</label>
-  <input type="text" name="rr_bass_link" id="rr_bass_link" value={{song.rr_bass_link}}>
+  <input type="text" name="rr_bass_link" id="rr_bass_link" value="{{song.rr_bass_link}}">
   <label for="steam_purchase_link">Steam Store</label>
-  <input type="text" name="steam_purchase_link" id="steam_purchase_link" value={{song.steam_purchase_link}}>
+  <input type="text" name="steam_purchase_link" id="steam_purchase_link" value="{{song.steam_purchase_link}}">
   <button type="submit" name="button">Save</button>
   <a href="/songs"><button type="button">Cancel</button></a>
 </form>
