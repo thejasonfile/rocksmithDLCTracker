@@ -49,4 +49,22 @@ router.get('/:id/edit', (req, res, next) => {
   });
 });
 
+router.post('/:id', (req, res, next) => {
+  let song = {};
+  song.title = req.body.title;
+  song.artist = req.body.artist;
+  song.song_release_year = req.body.song_release_year;
+  song.tuning = req.body.tuning;
+  song.pack_name = req.body.pack_name;
+  song.dlc_release_date = req.body.dlc_release_date;
+  song.rr_guitar_link = req.body.rr_guitar_link;
+  song.rr_bass_link = req.body.rr_bass_link;
+  song.steam_purchase_link = req.body.steam_purchase_link;
+
+  Song.updateSong(req.params.id, song, (err, song) => {
+    if(err) throw err;
+    res.redirect(`/songs/${req.params.id}`);
+  });
+});
+
 module.exports = router;

@@ -53,3 +53,8 @@ module.exports.getSongs = (callback, limit) => {
 module.exports.getSongById = (id, callback) => {
   Song.findById(id, callback);
 }
+
+//update song
+module.exports.updateSong = (id, changedSong, callback) => {
+  Song.update({_id: id}, {$set: changedSong}, callback);
+}
