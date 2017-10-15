@@ -7,7 +7,11 @@
   <label for="song_release_year">Release Year</label>
   <input type="number" name="song_release_year" id="song_release_year">
   <label for="tuning">Tuning</label>
-  <input type="text" name="tuning" id="tuning">
+  <select name="tuning" id="tuning">
+    {{#each tunings}}
+      <option value="{{@key}}">{{this}}</option>
+    {{/each}}
+  </select>
   <label for="pack_name">Pack Name</label>
   <input type="text" name="pack_name" id="pack_name">
   <label for="dlc_release_date">DLC Release Date</label>
