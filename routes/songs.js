@@ -49,7 +49,7 @@ router.get('/:id/edit', (req, res, next) => {
   });
 });
 
-router.post('/:id', (req, res, next) => {
+router.put('/:id', (req, res, next) => {
   let song = {};
   song.title = req.body.title;
   song.artist = req.body.artist;
@@ -66,5 +66,12 @@ router.post('/:id', (req, res, next) => {
     res.redirect(`/songs/${req.params.id}`);
   });
 });
+
+router.delete('/:id', (req, res, next) => {
+  Song.remove(req.params.id, (err) => {
+    if(err) throw err;
+    res.redirect('/');
+  })
+})
 
 module.exports = router;

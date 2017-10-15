@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const MongoClient = require('mongodb').MongoClient
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 
@@ -21,6 +22,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 //body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+//method override
+app.use(methodOverride('_method'));
 
 //Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/rocksmithdlc', {useMongoClient: true});
