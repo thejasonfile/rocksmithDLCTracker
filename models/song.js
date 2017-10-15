@@ -58,3 +58,8 @@ module.exports.getSongById = (id, callback) => {
 module.exports.updateSong = (id, changedSong, callback) => {
   Song.update({_id: id}, {$set: changedSong}, callback);
 }
+
+//remove song
+module.exports.removeSong = (id, callback) => {
+  Song.remove({_id: id}, callback);
+}

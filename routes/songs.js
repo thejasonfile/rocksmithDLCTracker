@@ -3,6 +3,7 @@ const router = express.Router();
 
 const Song = require('../models/song')
 
+//get all songs
 router.get('/', (req, res, next) => {
   Song.getSongs((err, songs) => {
     if(err) throw err;
@@ -10,10 +11,12 @@ router.get('/', (req, res, next) => {
   });
 });
 
+//new song form
 router.get('/new', (req, res, next) => {
   res.render('songs/new_song')
 })
 
+//create new song
 router.post('/', (req, res, next) => {
   let song = new Song();
   song.title = req.body.title;
@@ -35,6 +38,7 @@ router.post('/', (req, res, next) => {
   });
 });
 
+//show one song
 router.get('/:id', (req, res, next) => {
   Song.getSongById(req.params.id, (err, song) => {
     if(err) throw err;
@@ -42,6 +46,7 @@ router.get('/:id', (req, res, next) => {
   });
 });
 
+//edit song form
 router.get('/:id/edit', (req, res, next) => {
   Song.getSongById(req.params.id, (err, song) => {
     if(err) throw err;
@@ -49,6 +54,7 @@ router.get('/:id/edit', (req, res, next) => {
   });
 });
 
+//update one song
 router.put('/:id', (req, res, next) => {
   let song = {};
   song.title = req.body.title;
@@ -67,8 +73,9 @@ router.put('/:id', (req, res, next) => {
   });
 });
 
+//delete one song
 router.delete('/:id', (req, res, next) => {
-  Song.remove(req.params.id, (err) => {
+  Song.removeSong(req.params.id, (err) => {
     if(err) throw err;
     res.redirect('/');
   })
