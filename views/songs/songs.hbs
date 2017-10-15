@@ -1,7 +1,15 @@
 <h1>{{title}}</h1>
-<ul>
-  {{#each songs}}
-  <a href="song/{{this._id}}"><li>{{this.title}} - {{this.artist}}</li></a>
-  {{/each}}
-</ul>
+<table>
+  <tr>
+    <th>Song</th>
+    <th>Artist</th>
+  </tr>
+    {{#each songs}}
+    <tr>
+      <td><a href="song/{{this._id}}">{{this.title}}</a></td>
+      <td>{{this.artist}}</td>
+    </tr>
+    {{/each}}
+</table>
+<br>
 <a href="/songs/new">Add New Song</a>

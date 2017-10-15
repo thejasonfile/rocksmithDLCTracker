@@ -8,7 +8,7 @@ const songSchema = mongoose.Schema({
   artist: {
     type: String
   },
-  song_release_date: {
+  song_release_year: {
     type: Number
   },
   tuning: {
