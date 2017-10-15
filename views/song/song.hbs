@@ -2,13 +2,18 @@
 
 <p>Title - {{song.title}}</p>
 <p>Artist - {{song.artist}}</p>
-<p>Release Year - {{song.song_release_date}}</p>
+<p>Release Year - {{song.song_release_year}}</p>
 <p>Tuning - {{song.tuning}}</p>
 <p>Pack - {{song.pack_name}}</p>
 <p>DLC Release Date - {{song.dlc_release_date}}</p>
-<p>Riff Repeater Guitar Video - {{song.rr_guitar_link}}</p>
-<p>Riff Repeater Bass Video - {{song.rr_bass_link}}</p>
-<p>Steam Store - {{song.steam_purchase_link}}</p>
+{{#if song.rr_guitar_link}}
+<p><a href="{{song.rr_guitar_link}}">Riff Repeater Guitar Video</a></p>
+{{/if}}
+{{#if song.rr_bass_link}}
+<p><a href="{{song.rr_bass_link}}"></a>Riff Repeater Bass Video</a></p>
+{{/if}}
+{{#if song.steam_purchase_link}}
+<p><a href="{{song.steam_purchase_link}}">Purcahse on Steam</a></p>
+{{/if}}
 
-
-<a href="/songs">All Songs</a>
+<a href="/songs"><button>All Songs</button></a>
