@@ -16,7 +16,7 @@ router.get('/', (req, res, next) => {
 
 //new song form
 router.get('/new', (req, res, next) => {
-  res.render('songs/new_song', {title: "Add A Song"});
+  res.render('songs/new_song', {title: "Add A Song", tunings});
 });
 
 //create new song
