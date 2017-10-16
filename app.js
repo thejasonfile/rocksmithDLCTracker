@@ -12,16 +12,10 @@ const app = express();
 const index = require('./routes/index');
 const songs = require('./routes/songs');
 
-const hbs = exphbs.create({
-  helpers: {
-    hello: function () { return 'HELLO!'}
-  }
-})
-
 //view engine
 app.set('view engine', 'hbs');
 app.engine('hbs', require('hbs').__express);
-// app.engine('hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}));
+app.engine('hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}));
 
 //static folder
 app.use(express.static(path.join(__dirname, 'public')));

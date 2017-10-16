@@ -1,27 +1,45 @@
 <h4>{{title}}</h4>
-<form class="" action="/songs" method="post">
-  <label for="title">Title</label>
-  <input type="text" name="title" id="title">
-  <label for="artist">Artist</label>
-  <input type="text" name="artist" id="artist">
-  <label for="song_release_year">Release Year</label>
-  <input type="number" name="song_release_year" id="song_release_year">
-  <label for="tuning">Tuning</label>
-  <select name="tuning" id="tuning">
-    {{#each tunings}}
-      <option value="{{@key}}">{{this}}</option>
-    {{/each}}
-  </select>
-  <label for="pack_name">Pack Name</label>
-  <input type="text" name="pack_name" id="pack_name">
-  <label for="dlc_release_date">DLC Release Date</label>
-  <input type="date" name="dlc_release_date" id="dlc_release_date">
-  <label for="rr_guitar_link">Riff Repeater Guitar Video</label>
-  <input type="text" name="rr_guitar_link" id="rr_guitar_link">
-  <label for="rr_bass_link">Riff Repeater Bass Video</label>
-  <input type="text" name="rr_bass_link" id="rr_bass_link">
-  <label for="steam_purchase_link">Steam Store</label>
-  <input type="text" name="steam_purchase_link" id="steam_purchase_link">
-  <button type="submit" name="button">Save</button>
-  <a href="/songs"><button type="button">Cancel</button></a>
+<form action="/songs" method="post">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input class="form-control" type="text" name="title" id="title">
+  </div>
+  <div class="form-group">
+    <label for="artist">Artist</label>
+    <input class="form-control" type="text" name="artist" id="artist">
+  </div>
+  <div class="form-group">
+    <label for="song_release_year">Release Year</label>
+    <input class="form-control" type="number" name="song_release_year" id="song_release_year">
+  </div>
+  <div class="form-group">
+    <label for="tuning">Tuning</label>
+    <select class="form-control" name="tuning" id="tuning">
+      {{#each tunings}}
+        <option value="{{@key}}">{{this}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="pack_name">Pack Name</label>
+    <input class="form-control" type="text" name="pack_name" id="pack_name">
+  </div>
+  <div class="form-group">
+    <label for="dlc_release_date">DLC Release Date</label>
+    <input class="form-control" type="date" name="dlc_release_date" id="dlc_release_date">
+  </div>
+  <div class="form-group">
+    <label for="rr_guitar_link">Riff Repeater Guitar Video Link</label>
+    <input class="form-control" type="text" name="rr_guitar_link" id="rr_guitar_link">
+  </div>
+  <div class="form-group">
+    <label for="rr_bass_link">Riff Repeater Bass Video Link</label>
+    <input class="form-control" type="text" name="rr_bass_link" id="rr_bass_link">
+  </div>
+  <div class="form-group">
+    <label for="steam_purchase_link">Steam Store Link</label>
+    <input class="form-control" type="text" name="steam_purchase_link" id="steam_purchase_link">
+  </div>
+  <button class="btn btn-primary" type="submit" name="button">Save</button>
+  <a href="/songs"><button class="btn btn-warning" type="button">Cancel</button></a>
 </form>

@@ -1,19 +1,38 @@
-<h1>{{title}}</h1>
+<h1>{{song.title}} by {{song.artist}}</h1>
 
-<p>Title - {{song.title}}</p>
-<p>Artist - {{song.artist}}</p>
-<p>Release Year - {{song.song_release_year}}</p>
-<p>Tuning - {{song.tuning}}</p>
-<p>Pack - {{song.pack_name}}</p>
-<p>DLC Release Date - {{song.dlc_release_date}}</p>
-{{#if song.rr_guitar_link}}
-<p><a href="{{song.rr_guitar_link}}">Riff Repeater Guitar Video</a></p>
-{{/if}}
-{{#if song.rr_bass_link}}
-<p><a href="{{song.rr_bass_link}}"></a>Riff Repeater Bass Video</a></p>
-{{/if}}
-{{#if song.steam_purchase_link}}
-<p><a href="{{song.steam_purchase_link}}">Purcahse on Steam</a></p>
-{{/if}}
-
-<a href="/songs"><button>All Songs</button></a>
+<table class="table table-striped" id="song-table">
+  <tr>
+    <td>Release Year</td>
+    <td>{{song.song_release_year}}</td>
+  </tr>
+  <tr>
+    <td>Tuning</td>
+    <td>{{song.tuning}}</td>
+  </tr>
+  <tr>
+    <td>Pack Name</td>
+    <td>{{song.pack_name}}</td>
+  </tr>
+  <tr>
+    <td>DLC Release Year</td>
+    <td>{{song.dlc_release_date}}</td>
+  </tr>
+  {{#if song.rr_guitar_link}}
+  <tr>
+    <td>Riff Repeater Guitar Video</td>
+    <td><iframe src="{{song.rr_guitar_link}}"></iframe></td>
+  </tr>
+  {{/if}}
+  {{#if song.rr_bass_link}}
+  <tr>
+    <td>Riff Repeater Bass Video</td>
+    <td><iframe src="{{song.rr_bass_link}}"></iframe></td>
+  </tr>
+  {{/if}}
+  {{#if song.steam_purchase_link}}
+  <tr>
+    <td><a href="{{song.steam_purchase_link}}">Purcahse on Steam</a></td>
+  </tr>
+  {{/if}}
+</table>
+<a href="/songs/{{song._id}}/edit"><button class="btn btn-primary">Edit</button></a>

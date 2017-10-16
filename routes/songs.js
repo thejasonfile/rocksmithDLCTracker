@@ -16,7 +16,7 @@ router.get('/', (req, res, next) => {
 
 //new song form
 router.get('/new', (req, res, next) => {
-  res.render('songs/new_song', {tunings});
+  res.render('songs/new_song', {title: "Add A Song"});
 });
 
 //create new song
@@ -80,7 +80,7 @@ router.put('/:id', (req, res, next) => {
 router.delete('/:id', (req, res, next) => {
   Song.removeSong(req.params.id, (err) => {
     if(err) throw err;
-    res.redirect('/');
+    res.redirect('/songs');
   })
 })
 
