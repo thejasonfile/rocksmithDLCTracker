@@ -3,6 +3,8 @@
   <tr>
     <th>Song</th>
     <th>Artist</th>
+    <th>Release Year</th>
+    <th>Tuning</th>
     <th></th>
     <th></th>
   </tr>
@@ -10,6 +12,8 @@
     <tr>
       <td><a href="songs/{{this._id}}">{{this.title}}</a></td>
       <td>{{this.artist}}</td>
+      <td>{{this.song_release_year}}</td>
+      <td>{{this.tuning}}</td>
       <td><a href="songs/{{this._id}}/edit"><button class="btn btn-primary">Edit</button></a></td>
       <td>
         <form action="songs/{{this.id}}?_method=DELETE" method="post">
