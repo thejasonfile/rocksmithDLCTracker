@@ -1,6 +1,5 @@
-const tunings = {
+module.exports.tunings = {
   "E Standard": 'E Standard',
-  "Drop D": 'Drop D'
+  "Drop D": 'Drop D',
+  "E flat": 'E flat'
 };
-
-module.exports = tunings;

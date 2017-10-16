@@ -1,8 +1,10 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
 const router = express.Router();
 
 const Song = require('../models/song');
-const tunings = require('../helpers/tunings');
+const {tunings} = require('../helpers/tunings');
+const hbs = require('hbs');
 
 //get all songs
 router.get('/', (req, res, next) => {
