@@ -12,6 +12,9 @@ const app = express();
 const index = require('./routes/index');
 const songs = require('./routes/songs');
 
+//dotenv
+require('dotenv').config();
+
 //view engine
 app.set('view engine', 'hbs');
 app.engine('hbs', require('hbs').__express);
@@ -28,7 +31,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
 //Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/rocksmithdlc', {useMongoClient: true});
+//mongoose.connect('mongodb://localhost:27017/rocksmithdlc', {useMongoClient: true});
+mongoose.connect(process.env.DB_CONNECTION_STRING, {useMongoClient: true});
 
 app.use('/', index);
 app.use('/songs', songs);
