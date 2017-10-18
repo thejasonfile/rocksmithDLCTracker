@@ -18,7 +18,7 @@ const songSchema = mongoose.Schema({
     type: String
   },
   dlc_release_date: {
-    type: Date
+    type: String
   },
   rr_guitar_link: {
     type: String
